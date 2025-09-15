@@ -14,6 +14,10 @@ SENDER_EMAIL = "naveenkumar.spacezoneindia@gmail.com"
 SENDER_PASSWORD = "unmd jwaa upji krco"    # ⚠️ Use App Password for Gmail
 
 
+@app.get("/")
+async def health_check():
+    return JSONResponse({"status": "working"})
+
 @app.post("/contact")
 async def send_contact_form(request: Request):
     try:
